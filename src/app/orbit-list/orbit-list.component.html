@@ -1,0 +1,22 @@
+<!-- <app-orbit-list [satellites]="displayList"></app-orbit-list> -->
+
+<!-- <p>orbit-list works!</p> -->
+
+<h3>Orbit Report</h3>
+<table>
+   <tr class="header-row">
+      <th class="sortable"><button (click)="sort('name')">Name</button></th>
+      <th class="sortable"><button (click)="sort('type')">Type</button></th>
+      <th>Operational</th>
+      <th>Orbit Type</th>
+      <th>Launch Date</th>
+   </tr>
+   <tr *ngFor="let hamburger of satellites">
+       <td>{{ hamburger.name }}</td>
+       <td [class.warning]="hamburger.shouldShowWarning()">{{ hamburger.type }}</td>
+       <td>{{ hamburger.operational }}</td>
+       <td>{{ hamburger.orbitType }}</td>
+       <td>{{ hamburger.launchDate }}</td>
+   </tr>
+   <!-- TODO: put <tr *ngFor=""></tr> here -->
+</table>
